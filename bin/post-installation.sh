@@ -15,7 +15,7 @@ graphicsDriver(){
 }
 
 programming(){
-	sudo pacman -Sy go python netbeans code atom gedit mousepad leafpad android-file-transfer android-tools android-udev
+	sudo pacman -Sy go python netbeans code atom leafpad android-file-transfer android-tools android-udev
 }
 
 devOs(){
@@ -28,7 +28,7 @@ hack(){
 
 basic
 basicApps
-#graphicsDriver
-#programming
-#devOs
-#hack
+graphicsDriver
+programming
+devOs
+hack

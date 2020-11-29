@@ -7,8 +7,10 @@ ClockConfig(){
 	hwclock --systohc
 }
 
-# TODO: edit /etc/locale.gen and uncomment en_US.UTF-8 UTF-8 ...
-LanguageConfig(){	
+# TODO: delete cd /archlinux-install-script/bin and make it a path variable
+LanguageConfig(){
+	cd /archlinux-install-script/bin
+	cp ./config-files/locale.gen /etc/locale.gen	
 	locale-gen
 	echo LANG=en_US.UTF-8 > /etc/locale.conf
 }
@@ -31,13 +33,13 @@ InternetConfig(){
         systemctl start dhcpcd.service
 }
 
-
-# TODO: edit /etc/sudoers file
 # TODO: make AddUser() more dynamic
 AddUser(){
+	cp ./config-files/sudoers /etc/sudoers
         sudo pacman -Sy zsh zsh-completions zsh-autosuggestions zsh-syntax-highlighting grml-zsh-config
         useradd -m -G wheel,power,storage,tty -s /bin/zsh shervin
         passwd shervin
+	cat /etc/sudoers
 }
 
 BootLoader(){

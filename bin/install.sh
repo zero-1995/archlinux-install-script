@@ -16,11 +16,13 @@ ConfigureTheSystem(){
 }
 
 ChrootConfig(){
-	arch-chroot /mnt ./archlinux-install-script/bin/chrootConfig.sh
+	cd ~
+	cp -r archlinux-install-script /mnt
+	arch-chroot /mnt ./archlinux-install-script/bin/chroot-config.sh
 }
 
 
-BasePackage
-ConfigureTheSystem
+#BasePackage
+#ConfigureTheSystem
 ChrootConfig
 
