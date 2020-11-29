@@ -28,7 +28,7 @@ SetRootPassword(){
 }
 
 InternetConfig(){
-        sudo pacman -Sy dhcpcd networkmanager-pptp networkmanager-vpnc networkmanager-openvpn networkmanager-openconnect netctl dialog
+        sudo pacman -Sy --noconfirm dhcpcd networkmanager-pptp networkmanager-vpnc networkmanager-openvpn networkmanager-openconnect netctl dialog
         systemctl enable NetworkManager.service
         systemctl start dhcpcd.service
 }
@@ -36,14 +36,13 @@ InternetConfig(){
 # TODO: make AddUser() more dynamic
 AddUser(){
 	cp ./config-files/sudoers /etc/sudoers
-        sudo pacman -Sy zsh zsh-completions zsh-autosuggestions zsh-syntax-highlighting grml-zsh-config
+        sudo pacman -Sy --noconfirm zsh zsh-completions zsh-autosuggestions zsh-syntax-highlighting grml-zsh-config
         useradd -m -G wheel,power,storage,tty -s /bin/zsh shervin
         passwd shervin
-	cat /etc/sudoers
 }
 
 BootLoader(){
-	pacman -Sy grub os-prober
+	pacman -Sy --noconfirm grub os-prober
 	grub-install /dev/sda
 	grub-mkconfig -o /boot/grub/grub.cfg
 }
@@ -52,7 +51,7 @@ ClockConfig
 LanguageConfig
 HostConfig
 Initramfs
-SetRootPassword
 InternetConfig
-AddUser
 BootLoader
+SetRootPassword
+AddUser

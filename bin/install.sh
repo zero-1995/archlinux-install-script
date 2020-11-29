@@ -7,7 +7,7 @@ BasePackage(){
 	echo "
 	Let's have fun with ArchLinux!
 	"
-	pacstrap -i /mnt base base-devel linux linux-headers linux-firmware linux-lts linux-lts-headers
+	pacstrap /mnt base base-devel linux linux-headers linux-firmware linux-lts linux-lts-headers
 }
 
 ConfigureTheSystem(){
@@ -22,7 +22,7 @@ ChrootConfig(){
 }
 
 
-#BasePackage
-#ConfigureTheSystem
+BasePackage
+ConfigureTheSystem
 ChrootConfig
 
