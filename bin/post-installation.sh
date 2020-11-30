@@ -1,13 +1,14 @@
 #!/bin/bash
 # Post Installation script
-yay(){
-    git clone https://aur.archlinux.org/yay.git
-    cd yay
+paru(){
+    git clone https://aur.archlinux.org/paru.git
+    cd paru
     makepkg -si
 }
 
 basic(){
-    sudo pacman -Sy --noconfirm xorg xorg-xrandr ntfs-3g alsa-utils pulseaudio pulseaudio-alsa pulseaudio-bluetooth pavucontrol bluez bluez-utils networkmanager network-manager-applet networkmanager-qt ttf-dejavu zip unzip unrar xarchiver 
+    sudo pacman -Sy --noconfirm xorg xorg-xrandr ntfs-3g alsa-utils pulseaudio pulseaudio-alsa pulseaudio-bluetooth pavucontrol bluez bluez-utils networkmanager network-manager-applet networkmanager-qt ttf-dejavu zip unzip unrar xarchiver
+    sudo systemctl enable NetworkManager.service
 }
 
 basicApps(){
@@ -16,7 +17,7 @@ basicApps(){
 
 # TODO: Fix graphicsDriver function and nvidia setting
 graphicsDriver(){
-    sudo pacman -Sy --noconfirm nvidia nvidia-utils lib32-nvidia-utils xfce4 xfce4-goodies
+    sudo pacman -Sy --noconfirm nvidia nvidia-dkms nvidia-lts nvidia-prime nvidia-utils lib32-nvidia-utils xfce4 xfce4-goodies
 }
 
 programming(){
@@ -31,10 +32,10 @@ hack(){
     sudo pacman -Sy --noconfirm proxychains-ng proxytunnel tor polipo
 }
 
-#yay
+paru
 basic
-#basicApps
 graphicsDriver
+#basicApps
 #programming
 #devOs
 #hack

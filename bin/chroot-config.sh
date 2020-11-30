@@ -15,6 +15,10 @@ LanguageConfig(){
 	echo LANG=en_US.UTF-8 > /etc/locale.conf
 }
 
+ConfigPacman(){
+	cp ./config-files/pacman.conf /etc/pacman.conf
+}
+
 HostConfig(){
 	echo archLinux > /etc/hostname
 }
@@ -30,6 +34,7 @@ SetRootPassword(){
 InternetConfig(){
         sudo pacman -Sy --noconfirm dhcpcd networkmanager-pptp networkmanager-vpnc networkmanager-openvpn networkmanager-openconnect netctl dialog
         systemctl enable NetworkManager.service
+	systemctl enable dhcpcd.service
         systemctl start dhcpcd.service
 }
 
@@ -49,6 +54,7 @@ BootLoader(){
 
 ClockConfig
 LanguageConfig
+ConfigPacman
 HostConfig
 Initramfs
 InternetConfig
