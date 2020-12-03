@@ -12,7 +12,7 @@ basic(){
 }
 
 basicApps(){
-    sudo pacman -Sy --noconfirm flashplugin firefox vlc nautilus gimp inkscape blender openshot obs-studio libreoffice
+    sudo pacman -Sy --noconfirm flashplugin firefox vlc nautilus gimp inkscape blender openshot obs-studio libreoffice gnome-system-monitor
 }
 
 # TODO: Fix graphicsDriver function and nvidia setting
@@ -21,7 +21,7 @@ graphicsDriver(){
 }
 
 programming(){
-    sudo pacman -Sy --noconfirm nodejs arduino arduino-docs code intellij-idea-community-edition netbeans leafpad android-file-transfer android-tools android-udev
+    sudo pacman -Sy --noconfirm python nodejs arduino arduino-docs code intellij-idea-community-edition pycharm-community-edition netbeans leafpad android-file-transfer android-tools android-udev
 }
 
 devOs(){
