@@ -32,18 +32,20 @@ SetRootPassword(){
 }
 
 InternetConfig(){
-        sudo pacman -Sy --noconfirm dhcpcd networkmanager-pptp networkmanager-vpnc networkmanager-openvpn networkmanager-openconnect netctl dialog
-        systemctl enable NetworkManager.service
+    sudo pacman -Sy --noconfirm dhcpcd networkmanager-pptp networkmanager-vpnc networkmanager-openvpn networkmanager-openconnect iwd
+    systemctl enable NetworkManager.service
 	systemctl enable dhcpcd.service
-        systemctl start dhcpcd.service
+    systemctl start dhcpcd.service
+	#systemctl enable iwd.service
+	#systemctl start iwd.service
 }
 
 # TODO: make AddUser() more dynamic
 AddUser(){
 	cp ./config-files/sudoers /etc/sudoers
-        sudo pacman -Sy --noconfirm zsh zsh-completions zsh-autosuggestions zsh-syntax-highlighting grml-zsh-config
-        useradd -m -G wheel,power,storage,tty -s /bin/zsh shervin
-        passwd shervin
+	sudo pacman -Sy --noconfirm nano vim zsh zsh-completions zsh-autosuggestions zsh-syntax-highlighting grml-zsh-config
+	useradd -m -G wheel,power,storage,tty -s /bin/zsh shervin
+	passwd shervin
 }
 
 BootLoader(){

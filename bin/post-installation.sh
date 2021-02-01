@@ -12,29 +12,29 @@ basic(){
 }
 
 basicApps(){
-    sudo pacman -Sy --noconfirm flashplugin firefox vlc nautilus gimp inkscape blender openshot obs-studio libreoffice gnome-system-monitor
+    sudo pacman -Sy --noconfirm midori firefox vlc nautilus gimp inkscape blender openshot obs-studio libreoffice gnome-system-monitor
 }
 
 # TODO: Fix graphicsDriver function and nvidia setting
 graphicsDriver(){
-    sudo pacman -Sy --noconfirm xfce4 xfce4-goodies
+    sudo pacman -Sy --noconfirm xorg-xkbcomp xorg-xkbevd xorg-xkbutils xfce4 xfce4-goodies
 }
 
 programming(){
-    sudo pacman -Sy --noconfirm python nodejs arduino arduino-docs code intellij-idea-community-edition pycharm-community-edition netbeans leafpad android-file-transfer android-tools android-udev
+    sudo pacman -Sy --noconfirm python nodejs arduino arduino-docs meld code intellij-idea-community-edition pycharm-community-edition leafpad android-file-transfer android-tools android-udev
 }
 
 devOs(){
-    sudo pacman -Sy --noconfirm git docker
+    sudo pacman -Sy --noconfirm git docker docker-compose docker-machine virtualbox virtualbox-guest-iso virtualbox-ext-vnc
 }
 
 hack(){
     sudo pacman -Sy --noconfirm proxychains-ng proxytunnel tor polipo
 }
 
-#paru
+paru
 basic
-#graphicsDriver
+graphicsDriver
 basicApps
 programming
 devOs
