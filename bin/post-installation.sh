@@ -21,7 +21,7 @@ graphicsDriver(){
 }
 
 programming(){
-    sudo pacman -Sy --noconfirm python nodejs arduino arduino-docs meld code intellij-idea-community-edition pycharm-community-edition leafpad android-file-transfer android-tools android-udev
+    sudo pacman -Sy --noconfirm python nodejs arduino arduino-docs meld code qt6 qtcreator pycharm-community-edition leafpad android-file-transfer android-tools android-udev
 }
 
 devOs(){
